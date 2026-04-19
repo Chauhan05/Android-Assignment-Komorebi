@@ -17,9 +17,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.androidassignment.data.DummyData
 import com.example.androidassignment.data.Trailer
+import com.example.androidassignment.data.sampleTrailers
 
 @Composable
 fun TrailerCard(trailer: Trailer) {
@@ -95,4 +98,12 @@ fun TrailerCard(trailer: Trailer) {
             )
         }
     }
+}
+
+@Preview
+@Composable
+private fun TrailerCardCmp() {
+    TrailerCard(
+        trailer = sampleTrailers.first()
+    )
 }

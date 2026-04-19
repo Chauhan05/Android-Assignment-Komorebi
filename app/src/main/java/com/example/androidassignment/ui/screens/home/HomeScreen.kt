@@ -25,7 +25,9 @@ import com.example.androidassignment.R
 import com.example.androidassignment.data.DummyData
 import com.example.androidassignment.data.MediaSection
 import com.example.androidassignment.ui.screens.common_components.PlayNowButton
+import com.example.androidassignment.ui.screens.home.components.BannerCmp
 import com.example.androidassignment.ui.screens.home.components.MediaCmp
+import com.example.androidassignment.ui.screens.home.components.PlanCard
 import com.example.androidassignment.ui.screens.home.components.SearchBarCmp
 import com.example.androidassignment.ui.theme.AndroidAssignmentTheme
 import com.example.androidassignment.ui.theme.BackgroundColor
@@ -90,98 +92,22 @@ fun HomeScreenContent(
                 onItemClick = onItemClick
             )
         }
-    }
-}
 
-@Composable
-fun BannerCmp(
-    searchInput: String = "",
-    onValueChange: (String) -> Unit = {},
-    modifier: Modifier = Modifier,
-    onPlayClick: () -> Unit = {},
-) {
-    Column(
-        modifier = modifier.fillMaxWidth(),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .aspectRatio(0.75f)
-        ) {
-            Image(
-                painter = painterResource(R.drawable.banner_image),
-                contentDescription = "Irrfan Khan",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.fillMaxSize()
-            )
-
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(
-                        Brush.verticalGradient(
-                            colors = listOf(
-                                Color.Transparent,
-                                Color.Black.copy(alpha = 0.7f)
-                            ),
-                            startY = 300f
-                        )
-                    )
-            )
-
-            SearchBarCmp(
-                input = searchInput,
-                onValueChange = {
-                    onValueChange(it)
-                },
-                modifier = Modifier
-                    .align(Alignment.TopCenter)
-                    .padding(top = 59.dp, start = 16.dp, end = 16.dp)
-            )
-
-            Column(
-                modifier = Modifier
-                    .align(Alignment.BottomCenter)
-                    .padding(bottom = 16.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                Text(
-                    text = "THE CREATIVE NETWORK ORIGINALS",
-                    fontSize = 15.sp,
-                    color = Color.White,
-                    letterSpacing = 1.sp
-                )
-                Text(
-                    text = "IRRFAN KHAN",
-                    fontSize = 40.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.White,
-                )
-                PlayNowButton(onClick = {
-                    onPlayClick()
-                })
-                Spacer(Modifier.height(8.dp))
-                Text(
-                    text = "More Details",
-                    color = Color.White.copy(alpha = 0.9f),
-                    fontSize = 12.sp,
-                )
-            }
+        item{
+            PlanCard()
         }
-
-
     }
 }
 
 
-@Preview(showBackground = true)
+
+
+@Preview(showSystemUi = true)
 @Composable
 private fun HomeScreenContentPreview() {
     AndroidAssignmentTheme {
         Scaffold(
-            containerColor = BackgroundColor
+            containerColor = BackgroundColor,
         ) { innerPadding ->
             HomeScreenContent(
                 sections = DummyData.sections,

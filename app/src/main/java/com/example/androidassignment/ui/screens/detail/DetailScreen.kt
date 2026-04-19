@@ -40,7 +40,9 @@ fun DetailScreen(
         viewModel.loadMovie(movieId)
     }
 
-    Scaffold(containerColor = BackgroundColor) { innerPadding ->
+    Scaffold(
+        containerColor = BackgroundColor,
+    ) { innerPadding ->
         DetailScreenContent(
             media = uiState.media,
             onBackClick = onBackClick,

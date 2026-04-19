@@ -18,8 +18,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.androidassignment.data.DummyData
 import com.example.androidassignment.data.MediaItem
 
 @Composable
@@ -65,4 +67,10 @@ fun MediaCard(
                 .padding(8.dp)
         )
     }
+}
+
+@Preview
+@Composable
+private fun MediaCardPreview() {
+    MediaCard(item= DummyData.sections.first().items.first()) { }
 }

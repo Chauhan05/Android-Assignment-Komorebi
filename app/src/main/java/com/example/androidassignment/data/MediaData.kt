@@ -45,6 +45,7 @@ object DummyData {
     )
 
     val sections = listOf(
+//        very media section has the same list
         MediaSection("Documentaries", sampleItems),
         MediaSection("New Releases", sampleItems),
         MediaSection("Trending Now", sampleItems),

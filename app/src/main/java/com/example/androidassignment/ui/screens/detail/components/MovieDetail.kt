@@ -12,8 +12,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.androidassignment.data.DummyData
 import com.example.androidassignment.data.MediaItem
 import com.example.androidassignment.ui.screens.detail.BadgeCmp
 
@@ -92,4 +94,13 @@ fun MovieDetail(media: MediaItem) {
             lineHeight = 20.sp
         )
     }
+}
+
+
+@Preview
+@Composable
+private fun MovieDetailPreview() {
+    MovieDetail(
+        media = DummyData.defaultMedia
+    )
 }
